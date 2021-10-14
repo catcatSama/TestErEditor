@@ -1,1 +1,101 @@
-undefined
+{
+  "entities": [
+    {
+      "id": "1616905818967-6825",
+      "name": "Node",
+      "view": {
+        "x": 160,
+        "y": 550
+      },
+      "fields": [
+        {
+          "id": "1616905827021-61534",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "id": "1616905830825-25486",
+          "name": "children",
+          "type": "rel"
+        },
+        {
+          "id": "1616906002714-94861",
+          "name": "parent",
+          "type": "rel"
+        },
+        {
+          "id": "4",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "id": "5",
+          "name": "level",
+          "type": "number",
+          "length": 1
+        },
+        {
+          "id": "6",
+          "name": "skill",
+          "type": "rel"
+        }
+      ],
+      "belongToUser": true
+    },
+    {
+      "id": "1",
+      "name": "Skill",
+      "view": {
+        "x": 460,
+        "y": 550
+      },
+      "fields": [
+        {
+          "id": "2",
+          "name": "name",
+          "type": "string"
+        }, {
+          "id": "3",
+          "name": "nodes",
+          "type": "rel"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "579004b3-c889-42c1-bba4-0d586bd9d04a",
+      "name": "has",
+      "type": "1:n",
+      "source": {
+        "entity": "1616905818967-6825",
+        "field": "1616905830825-25486"
+      },
+      "target": {
+        "entity": "1616905818967-6825",
+        "field": "1616906002714-94861"
+      },
+      "view": {
+        "sourcePortSide": "left",
+        "targetPortSide": "left"
+      }
+    },
+    {
+      "id": "101",
+      "name": "is",
+      "type": "n:1",
+      "source": {
+        "entity": "1616905818967-6825",
+        "field": "6"
+      },
+      "target": {
+        "entity": "1",
+        "field": "3"
+      },
+      "view": {
+        "sourcePortSide": "right",
+        "targetPortSide": "left"
+      }
+    }
+  ]
+}
